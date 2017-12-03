@@ -2,6 +2,7 @@
 	margin:10px 0px 10px 0px !important;
 }
 
+
 .main_header_banner{
 	position: relative;
 	width: 100%;
@@ -33,10 +34,61 @@
 	padding-right: 60px;
 	padding-bottom: 30px;
 }
-.main_middle_container .middle_header{
+ .header_members{
+	 margin-top:15px;
 	font-size: 40px;
+	font-weight: bolder;
 	font-family: 'Avenir Book';
-	text-align: left;
+	color: seagreen;
+	text-align: center;
+}
+
+.roots_members{
+ font-size: 25px;
+ font-weight: bolder;
+ font-family: 'Avenir Book';
+ color:white;
+}
+.button_members{
+	width: 100%;
+	background-color: seagreen;
+	border-radius: 15px;
+	text-align: center;
+	height:50px;
+}
+
+
+.side_members{
+	margin-top:15px;
+ font-size: 30px;
+ font-weight: bolder;
+ font-family: 'Avenir Book';
+ color: #264f5c;
+ text-align: center;
+}
+.side_year_members{
+	margin-top:15px;
+ font-size: 25px;
+ font-weight: bolder;
+ font-family: 'Avenir Book';
+ color: seagreen;
+ text-align: left;
+}
+.side_stream_members{
+	margin-top:15px;
+ font-size: 20px;
+ font-weight: bolder;
+ font-family: 'Avenir Book';
+ color: #7c9982;
+ text-align: left;
+}
+
+.no-margin{
+	margin:0px !important;
+}
+.button_members:hover{
+	opacity: 0.9;
+	cursor:pointer;
 }
 .content_holder{
 	text-align: left;
@@ -160,6 +212,9 @@ button{
 		max-width: 95% !important;
 		margin:auto !important;
 		padding-right: 0px;
+	}
+	.contact_holder{
+		margin: auto !important;
 	}
 }
 
@@ -323,8 +378,14 @@ button{
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+.link-mod{
+	text-decoration: none !important;
+}
 .contact_holder .name{
-	padding: 10px 0px;
+	padding: 10px 0px 2px 0px;
+	text-align: center;
+}
+.contact_holder .link{
 	text-align: center;
 }
 

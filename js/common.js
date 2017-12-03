@@ -10,29 +10,17 @@ function changeTab(obj) {
 $(document).ready(function(){
       console.log("ready");
 
-  $(window).on('scroll', function(obj){
-			if(document.documentElement.clientHeight<800){
-				if($(this).scrollTop() > 375){
-					$(".nav-fixed").css("position","fixed");
-					$(".nav-fixed").css("top","0px");
-					$(".nav-fixed").css("z-index","999");
-				}
-				else{
-					$(".nav-fixed").css("position","static");
-				}
+			var yourNavigation = $(".nav-fixed");
+			    stickyDiv = "sticky";
+			    yourHeader = $('.header').height();
 
-			}
-			else{
-   			if($(this).scrollTop() > 225){
-   				$(".nav-fixed").css("position","fixed");
-   				$(".nav-fixed").css("top","0px");
-   				$(".nav-fixed").css("z-index","999");
-   			}
-   			else{
-   				$(".nav-fixed").css("position","static");
-   			}
-		}
-   });
+			$(window).scroll(function() {
+			  if( $(this).scrollTop() > yourHeader ) {
+			    yourNavigation.addClass(stickyDiv);
+			  } else {
+			    yourNavigation.removeClass(stickyDiv);
+			  }
+			});
 
 });
 //Math.round(document.documentElement.clientHeight * .14)

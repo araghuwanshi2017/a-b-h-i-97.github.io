@@ -182,7 +182,6 @@ p{
 .middle_slider{
 	position: relative;
 	width: 100%;
-	height: 300px;
 	margin-top: 50px;
 	margin:auto;
 }
@@ -278,7 +277,6 @@ p{
 .right_slider{
 	position: relative;
 	width: 60%;
-	height: 300px;
 	margin-top: 50px;
 	margin:auto;
 }
@@ -351,6 +349,11 @@ p{
 	transform: translate3d(0, 0, 0);
 }
 
+.sticky {
+  position:fixed;
+  top:0;
+	z-index: 1000;
+}
 
 /*Animation Overlay*/
 
