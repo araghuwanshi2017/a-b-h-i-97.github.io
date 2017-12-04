@@ -56,7 +56,7 @@
     <div class="flexslider" id="main_flexslider" >
       <ul class="slides" id="fireslides">
         <li>
-          <div style="background-image: url(failed.png);"></div>
+          <div style="background-image: url(rm.jpg);"></div>
         </li>
       </ul>
     </div>

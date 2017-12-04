@@ -55,16 +55,9 @@
 
 
 <div class="container-fluid " style="padding:10px 20px 10px 20px" >
-  <div class="header_members">Our Team</div>
-  <div class="side_members">Faculty</div>
-  <div class="row" id="faculty">
-  </div>
+  <div class="header_members">Alumni</div>
 </div>
   <div class="container-fluid" id="execs">
-    <div class="side_members">Executives</div>
-  </div>
-  <div class="container-fluid" style="margin-bottom:20px ">
-    <a href="roots.php" class="root_link"><button type="button" class="button_members"><div class="roots_members">Our Roots</div></button></a>
   </div>
 
 <?php
@@ -74,36 +67,19 @@
  <script>
    $(window).load(function() {
      });
-     var facultydb=myFireBase.child("Members").child("Faculty");
-     facultydb.once("value").then(function(snapshot){
-       var facultyval=snapshot.val();
-       console.log(facultyval);
-       for(var iter in facultyval){
-         (function(cntr){
-           var facultyjson=facultyval[cntr];
-           var name=facultyjson.facname;
-           var imgd=facultyjson.reladdr;
-           var facurl=facultyjson.url;
-           console.log(cntr);
-           storageRef.child(imgd).getDownloadURL().then(function(url) {
-             var xhr = new XMLHttpRequest();
-             xhr.responseType = 'blob';
-             xhr.onload = function(event) {
-               var blob = xhr.response;
-             };
-             xhr.open('GET', url);
-             xhr.send();
-             var imgurl=url;
-             $("#faculty").append('<div class="contact_holder" style="width: 160px;"><center><div class="pic" style="background-image: url('+imgurl+')"></div></center><center><div class="name">'+name+'</div></center><center><a class="link-mod" href="'+facurl+'"><div class="link">Profile</div></center></a></div>');
-           }).catch(function(error) {
-             console.log("faculty not fetched");
-           });
-         })(iter);
-       }
-     });
 
      var studentsdb=myFireBase.child("Members").child("Students");
-     studentsdb.orderByKey().limitToLast(3).on("child_added", function(snapshot) {
+     var waitdb=myFireBase.child("Members").child("global_var");
+
+     waitdb.on("child_added",function(snapshot){
+       if(snapshot.key=="student_info_years"){
+          proceedfurther(snapshot.val());
+        }
+     });
+
+    function proceedfurther(children){
+      console.log(children);
+     studentsdb.orderByKey().limitToFirst(children-3).on("child_added", function(snapshot) {
        var studentsval=snapshot.val();
        var year=snapshot.key;
        $("#execs").append('<div class="row side_year_members no-margin" id="members_'+year+'">'+year+'</div>');
@@ -142,4 +118,6 @@
          })(iter);
        }
      });
+   }
+
  </script>
