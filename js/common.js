@@ -9,18 +9,23 @@ function changeTab(obj) {
 
 $(document).ready(function(){
       console.log("ready");
-
-			var yourNavigation = $(".nav-fixed");
-			    stickyDiv = "sticky";
-			    yourHeader = $('.header').height();
-
-			$(window).scroll(function() {
-			  if( $(this).scrollTop() > yourHeader ) {
-			    yourNavigation.addClass(stickyDiv);
-			  } else {
-			    yourNavigation.removeClass(stickyDiv);
-			  }
-			});
-
+   $('#login').click(function() {
+   		$('.body_overlay').fadeIn();
+   		$('#login_modal').fadeIn();
+   });
+   $('.body_overlay').click(function() {
+   		$('.body_overlay, #login_modal').fadeOut();
+   });
+   
+   $(window).on('scroll', function(obj){
+   		if($(this).scrollTop() > 215){
+   			$(".navbar").css("position","fixed");
+   			$(".navbar").css("top","0px");
+   			$(".navbar").css("z-index","999");
+   		}
+   		else{
+   			$(".navbar").css("position","static");
+   		}
+   });
+   
 });
-//Math.round(document.documentElement.clientHeight * .14)

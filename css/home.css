@@ -7,10 +7,7 @@ html, body{
 p{
 	-webkit-user-select: none;
 }
-.no-pad{
-	padding: 0px !important;
-	margin: 0px !important;
-}
+
 .body_overlay{
 	position: fixed;
 	left: 0px;
@@ -24,56 +21,97 @@ p{
 }
 
 .header{
+	position: relative;
+	width: 100%;
+	height: 280px;
 	background: white;
 	border-top: 4px solid #B9975B;
+	border-bottom: 4px solid #B9975B;
 }
+
+
 .header_top{
 	position: relative;
+	width: 1100px;
+	height: 210px;
 	margin: 0 auto;
 	overflow: hidden;
 }
-
-#picture1{
-	width:120px;
-	height:150px;
+.search_bar{
+	position: absolute;
+	right: 0px;
+	top: 10px;
 }
-#picture2{
-	width:300px;
-	height:170px;
-	align-content: center;
+#search{
+	width: 200px;
+	height: 33px;
+	padding: 0 12px;
+	float: left;
+	color: #115740;
+	font-size: 16px;
+	border: 1px solid #b3b3b3;
+	background-color: #ffffff;
+	vertical-align: middle;
+	outline: none;
 }
-
+#search_icon{
+	height: 33px;
+	width: 40px;
+	background: green;
+	position: relative;
+	float: right;
+	margin: 0px 10px;
+}
 .main_logo{
-	margin-top: 35px !important;
-	margin-bottom: 20px !important;
+	display: block;
+	width: 300px;
+	margin: 0 auto;
+	height: 170px;
+	background: url(../header.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-top: 35px;
 }
 .banner{
+	position: absolute;
+	left: 0;
+	top: 0px;
+	width: 120px;
+	height: 150px;
+	background: url(../banner.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
 	transition: all 0.3s;
 	transform: translate3d(0, -10px, 0);
 }
 .banner:hover{
 	transform: translate3d(0, 0, 0);
 }
-
-
 .navbar{
+	position: absolute;
 	background: linear-gradient(to right, #115740 32%, #277763 50%, #115740 68%);
+	width: 100%;
+	height: 70px;
 	border-bottom: 4px solid #B9975B;
 }
 .navbar ul{
 	margin: 0 auto;
 	position: relative;
 	white-space: nowrap;
+	width: 1100px;
 }
 .navbar ul li{
 	display: inline-block;
 	margin: 0px;
-	padding: 10px 20px;
+	padding: 25px 20px;
 	color: #ffffff;
 	text-transform: uppercase;
 	font-size: 14px;
 	letter-spacing: 0.5px;
 	cursor: pointer;
+	margin-left: -5px;
 	outline: none;
 	border: 0px;
 }
@@ -83,13 +121,69 @@ p{
 .active{
 	background: #163029;
 }
-.navbar-toggler{
-	margin: 10px 10px 10px 10px;
-	border-style: none;
+
+
+#login{
+	position: absolute;
+	right: 10px;
+	cursor: pointer;
+	display: none;
 }
-
-
-
+#login_modal{
+	position: fixed;
+	width: 320px;
+	height: 400px;
+	background: white;
+	left: 50%;
+	margin-left: -160px;
+	top: 50%;
+	margin-top: -200px;
+	z-index: 9999;
+	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+	display: none;
+	animation-name: zoom;
+	animation-duration: 0.5s;
+}
+#login_modal .header_holder{
+	position: relative;
+	width: 100%;
+	height: 180px;
+	margin-bottom: 10px;
+}
+#login_modal .banner{
+	left: 10px;
+}
+#login_modal h2{
+	font-weight: 500;
+	color: seagreen;
+	width: 200px;
+	float: right;
+	text-align: center;
+	margin-top: 30px;
+}
+#login_modal input{
+	position: relative;
+	width: calc(100% - 60px);
+	margin: 15px 30px;
+	border: 0px;
+	outline: none;
+	border-bottom: 1px solid seagreen;
+	padding: 5px 5px;
+	font-size: 16px;
+}
+#login_modal button{
+	margin-top: 30px;
+	font-size: 16px;
+	border-radius: 5px;
+	background: seagreen;
+	color: white;
+	padding: 5px 15px;
+	line-height: 20px;
+	font-weight: 500;
+	border: 0px;
+	cursor: pointer;
+}
 
 
 
@@ -129,6 +223,7 @@ p{
 
 .main_content{
 	position: relative;
+	width: 1000px;
 	min-height: 480px;
 	z-index: 99;
 	margin: 0px auto;
@@ -163,7 +258,7 @@ p{
 	background-size: cover;
 }
 .imagebox_big_header{
-	text-align: center;
+	text-align: left;
 	width: 100%;
 	font-size: 20px;
 	padding: 10px 0px 5px 0px;
@@ -171,19 +266,18 @@ p{
 	font-weight: 500;
 }
 .imagebox_big_content{
-	text-align: center;
+	text-align: left;
 	width: 100%;
 	font-size: 14px;
 	color: green;
 	font-family: 'Avenir';
 	font-weight: 300;
-	padding:10px 20px 10px 20px;
 }
 .middle_slider{
 	position: relative;
 	width: 100%;
+	height: 300px;
 	margin-top: 50px;
-	margin:auto;
 }
 
 .middle_slider #middle_flexslider{
@@ -197,10 +291,12 @@ p{
 
 
 .main_content .left{
+	position: absolute;
+	left: 0px;
 	top: 0px;
 	width: 230px;
 	padding: 100px 0px 50px 0px;
-	margin:0px auto;
+	height: calc(100% - 150px);
 }
 .left_right_header{
 	position: relative;
@@ -218,35 +314,34 @@ p{
 	width: 100%;
 	height: 100%;
 	margin-top: 20px;
-	margin:auto;
 }
-.slides .event_holder{
+.event_holder{
 	position: relative;
 	width: 100%;
-	margin: auto;
+	margin: 10px 0px;
+	height: 100px;
 }
 .event_holder .date{
 	position: relative;
 	font-size: 26px;
 	width: 60px;
 	height: 85px;
-	display:inline-block;
+	float: left;
 	margin: 0px;
 	padding: 0px 5px;
 	text-align: center;
 	line-height: 30px;
 	margin-top: 15px;
-	vertical-align: top;
 }
 .event_side_header{
-	display:inline-block;
 	position: relative;
 	background: white;
 	border-left: 7px solid grey;
-	width: 160px;
+	float: right;
+	width: 120px;
 	height: 80px;
 	font-size: 14px;
-	line-height: 20px;
+	line-height: 14px;
 	margin: 0px;
 	padding: 5px 10px;
 	text-overflow: ellipsis;
@@ -255,20 +350,19 @@ p{
 
 
 .main_content .right{
-	position: relative;
+	position: absolute;
 	top: 0px;
 	right: 0px;
 	width: 230px;
-	margin:0px auto;
 	padding: 100px 0px 50px 0px;
+	height: calc(100% - 150px);
 }
 .imagebox_small{
 	position: relative;
-	width: 60%;
+	width: 100%;
 	height: 150px;
 	background: grey;
 	margin-top: 20px;
-	margin:auto;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -276,15 +370,13 @@ p{
 
 .right_slider{
 	position: relative;
-	width: 60%;
+	width: 100%;
+	height: 300px;
 	margin-top: 50px;
-	margin:auto;
 }
 .flex-caption{
 	font-size: 14px;
 	color: green;
-	text-align: center;
-	margin:auto;
 	font-family: 'Avenir';
 	font-weight: 500;
 }
@@ -297,17 +389,41 @@ p{
 
 .footer{
 	position: relative;
+	width: 100%;
 	border-top: 3px solid #B9975B;
+	z-index: 100;
 	background: #115740 url(../csea.png) no-repeat center;
 	background-size: 20%;
 }
-
-
+.footer_container{
+	width: 200px;
+	height: 250px;
+	margin: 0px auto;
+	margin-top: 100px;
+	position: relative;
+}
+.footer_left_links{
+	position: absolute;
+	width: 100%;
+	left: -300px;
+	top: 0px;
+}
+.footer_middle_links{
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+}
+.footer_right_links{
+	position: absolute;
+	width: 100%;
+	right: -300px;
+	top: 0px;
+}
 .footer_container ul{
 	list-style: none;
 	font-size: 16px;
-	padding-top: 60px;
-	padding-left: 0px;
+	padding-left: 10px;
 	font-weight: 300;
 	line-height: 36px;
 }
@@ -318,6 +434,7 @@ p{
 .footer .middle_header{
 	color: white;
 	font-size: 30px;
+	padding: 20px 0px 10px 0px;
 	letter-spacing: 5px;
 	font-weight: 300;
 }
@@ -330,12 +447,12 @@ p{
 }
 .footer .left_right_header{
 	font-size: 16px;
+	padding: 5px 0px;
 	letter-spacing: 2px;
 }
 
-.footer_bottom{
-	padding-top: 60px;
-}
+
+
 
 .holder{
 	display: none;
@@ -349,11 +466,6 @@ p{
 	transform: translate3d(0, 0, 0);
 }
 
-.sticky {
-  position:fixed;
-  top:0;
-	z-index: 1000;
-}
 
 /*Animation Overlay*/
 
